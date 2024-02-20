@@ -1,0 +1,248 @@
+@font-face {
+  font-family: "DS-Digi";
+  src: url("../font/DS-DIGI.TTF") format("opentype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "DS-DigiB";
+  src: url("../font/DS-DIGIB.TTF") format("opentype");
+  font-weight: bold;
+}
+body {
+  font-family: "DS-Digi", monospace;
+  background-color: #0c0c0c;
+}
+
+dialog {
+  border: solid 2px #2de2e6;
+  border-radius: 1rem;
+  box-shadow: #9700CC 0px 5px 15px, inset #9700CC 0px 5px 15px;
+  background-color: #0c0c0c;
+  color: #2de2e6;
+}
+dialog h1 {
+  color: #f6019d;
+}
+dialog button {
+  color: #2de2e6;
+  background-color: #f6019d;
+  border: solid 2px #a8005f;
+  margin-top: 2rem;
+}
+dialog button:hover {
+  background-color: #a8005f;
+  border: solid 2px #f6019d;
+}
+dialog form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+dialog form p {
+  margin: 0;
+}
+dialog form input[type=submit] {
+  color: #2de2e6;
+  background-color: #f6019d;
+  border: solid 2px #a8005f;
+}
+dialog form input[type=submit]:hover {
+  background-color: #a8005f;
+  border: solid 2px #f6019d;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas: "setupArea scoreArea musicArea" "gameArea gameArea gameArea";
+  height: 95vh;
+  width: 95vw;
+}
+
+#setupBoard {
+  border: solid 2px #2de2e6;
+  border-radius: 1rem;
+  box-shadow: #9700CC 0px 5px 15px, inset #9700CC 0px 5px 15px;
+  margin: 1rem;
+  grid-area: setupArea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2de2e6;
+}
+#setupBoard form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#setupBoard form button {
+  color: #2de2e6;
+  background-color: #f6019d;
+  border: solid 2px #a8005f;
+}
+#setupBoard form button:hover {
+  background-color: #a8005f;
+  border: solid 2px #f6019d;
+}
+#setupBoard form button:disabled {
+  background-color: #818181;
+  color: #035ee8;
+  border: solid 2px #707070;
+}
+
+#scoreBoard {
+  border: solid 2px #2de2e6;
+  border-radius: 1rem;
+  box-shadow: #9700CC 0px 5px 15px, inset #9700CC 0px 5px 15px;
+  margin: 1rem;
+  grid-area: scoreArea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#scoreBoard p#currentScore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  margin: 1rem;
+  color: #2de2e6;
+}
+#scoreBoard button#showRankingBtn {
+  margin: 1rem;
+  color: #2de2e6;
+  background-color: #f6019d;
+  border: solid 2px #a8005f;
+}
+#scoreBoard button#showRankingBtn:hover {
+  background-color: #a8005f;
+  border: solid 2px #f6019d;
+}
+
+#musicBoard {
+  border: solid 2px #2de2e6;
+  border-radius: 1rem;
+  box-shadow: #9700CC 0px 5px 15px, inset #9700CC 0px 5px 15px;
+  margin: 1rem;
+  grid-area: musicArea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #2de2e6;
+  gap: 1rem;
+}
+#musicBoard button {
+  color: #2de2e6;
+  background-color: #f6019d;
+  border: solid 2px #a8005f;
+  height: 2rem;
+  width: 2.5rem;
+}
+#musicBoard button:hover {
+  background-color: #a8005f;
+  border: solid 2px #f6019d;
+}
+
+#gameBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 2px #2de2e6;
+  border-radius: 1rem;
+  box-shadow: #9700CC 0px 5px 15px, inset #9700CC 0px 5px 15px;
+  margin: 1rem;
+  grid-area: gameArea;
+  background-image: url("../img/fondo.png");
+  background-repeat: repeat;
+}
+#gameBoard #buttonsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  width: calc(min(68vh, 88vw) - 2rem);
+  height: calc(min(68vh, 88vw) - 2rem);
+  aspect-ratio: 1/1;
+}
+#gameBoard #buttonsContainer button {
+  border: none;
+  outline: solid 6px #0c0c0c;
+  box-shadow: #161616 0px 5px 15px, inset #161616 0px 5px 15px;
+}
+#gameBoard #greenBtn {
+  background-color: #beffbe;
+  grid-area: 1/1/3/3;
+  border-radius: 100% 0 0 0;
+}
+#gameBoard #greenBtn.active {
+  background-color: #00ff00;
+  box-shadow: 0px 0px 20px 20px rgba(0, 255, 0, 0.5019607843);
+  z-index: 2;
+}
+#gameBoard #greenBtn:hover {
+  z-index: 2;
+  outline: solid 6px #00ff00;
+}
+#gameBoard #redBtn {
+  background-color: #ffbebe;
+  grid-area: 1/3/3/5;
+  border-radius: 0 100% 0 0;
+}
+#gameBoard #redBtn.active {
+  background-color: #ff0000;
+  box-shadow: 0px 0px 20px 20px rgba(255, 0, 0, 0.5019607843);
+  z-index: 2;
+}
+#gameBoard #redBtn:hover {
+  z-index: 2;
+  outline: solid 6px #ff0000;
+}
+#gameBoard #playerBtn {
+  background-color: #bebebe;
+  grid-area: 2/2/4/4;
+  border-radius: 50%;
+  height: 50%;
+  width: 50%;
+  margin: auto;
+  z-index: 3;
+}
+#gameBoard #playerBtn.active {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 20px 20px rgba(255, 255, 255, 0.5019607843);
+}
+#gameBoard #blueBtn {
+  background-color: #bebeff;
+  grid-area: 3/3/5/5;
+  border-radius: 0 0 100% 0;
+}
+#gameBoard #blueBtn.active {
+  background-color: #0000ff;
+  box-shadow: 0px 0px 20px 20px rgba(0, 0, 255, 0.5019607843);
+  z-index: 2;
+}
+#gameBoard #blueBtn:hover {
+  z-index: 2;
+  outline: solid 6px #0000ff;
+}
+#gameBoard #yellowBtn {
+  background-color: #ffffbe;
+  grid-area: 3/1/5/3;
+  border-radius: 0 0 0 100%;
+}
+#gameBoard #yellowBtn.active {
+  background-color: #ffff00;
+  box-shadow: 0px 0px 20px 20px rgba(255, 255, 0, 0.5019607843);
+  z-index: 2;
+}
+#gameBoard #yellowBtn:hover {
+  z-index: 2;
+  outline: solid 6px #ffff00;
+}/*# sourceMappingURL=style.css.map */

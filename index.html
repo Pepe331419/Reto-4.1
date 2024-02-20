@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simón dice</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/normalize.css">
+</head>
+
+<body>
+    <dialog id="ranking">
+        <h1>RANKING DE MEJORES JUGADORES</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Puntuacion</th>
+                    <th>Dificultad</th>
+                </tr>
+            </thead>
+            <tbody id="rankingTableBody">
+                <template>
+                    <tr>
+                        <td class="rankingName"></td>
+                        <td class="rankingScore"></td>
+                        <td class="rankingDifficulty"></td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <button id="closeRankingBtn">Cerrar</button>
+    </dialog>
+
+    <dialog id="nameInput">
+        <form action="#" id="scoreInput">
+            <p id="finalScore"></p>
+            <p id="finalDifficulty"></p>
+            <label for="playerName">Introduce tu nombre:</label>
+            <input type="text" name="playerName" id="playerName" minlength="3" maxlength="3">
+            <input type="submit" id="inputScoreBtn" value="Aceptar">
+        </form>
+    </dialog>
+
+    <div id="audios">
+        <audio id="startJingle">
+            <source src="static/music/Start.mp3" type="audio/mp3">
+        </audio>
+        <audio id="press1">
+            <source src="static/music/Tono1.mp3" type="audio/mp3">
+        </audio>
+        <audio id="press2">
+            <source src="static/music/Tono2.mp3" type="audio/mp3">
+        </audio>
+        <audio id="press3">
+            <source src="static/music/Tono3.mp3" type="audio/mp3">
+        </audio>
+        <audio id="press4">
+            <source src="static/music/Tono4.mp3" type="audio/mp3">
+        </audio>
+        <audio id="wrongSound">
+            <source src="static/music/wrong.wav" type="audio/wav">
+        </audio>
+    </div>
+
+    <div id="mainContainer">
+
+        <div id="setupBoard">
+            <form action="#">
+                <label for="difficultySettings">Selecciona dificultad:</label>
+                <select name="difficultySettings" id="difficultySettings">
+                    <option value="1350">Muy facil</option>
+                    <option value="1150">Facil</option>
+                    <option value="950">Medio</option>
+                    <option value="750">Dificil</option>
+                    <option value="550">Muy dificil</option>
+                </select>
+                <button id="startGame">Empezar</button>
+            </form>
+        </div>
+
+
+        <div id="scoreBoard">
+            <p id="currentScore">-</p>
+            <button id="showRankingBtn">Ver ranking</button>
+        </div>
+
+
+        <div id="musicBoard">
+            <audio id="bgMusic" loop autoplay>
+                <source src="static/music/music.wav" type="audio/wav">
+            </audio>
+            <h2>Soundtrack</h2>
+            <div>
+                <button id="playBtn">⏵︎</button>
+                <button id="stopBtn">⏸︎</button>
+            </div>
+        </div>
+
+
+        <div id="gameBoard">
+            <div id="buttonsContainer">
+                <button id="greenBtn"></button>
+                <button id="redBtn"></button>
+                <button id="blueBtn"></button>
+                <button id="yellowBtn"></button>
+                <button id="playerBtn" disabled></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/js/script.js"></script>
+</body>
+
+</html>
